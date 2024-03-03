@@ -25,7 +25,7 @@ public class WebActivity extends AppCompatActivity {
   private void initWebView() {
     WebView webView = (WebView) findViewById(R.id.webView);
     webView.getSettings().setJavaScriptEnabled(true);
-    //webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+    webView.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
     webView.setVerticalScrollBarEnabled(false);
     webView.getSettings().setDomStorageEnabled(true);
     webView.getSettings().setAllowFileAccess(true);

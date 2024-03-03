@@ -22,5 +22,6 @@ class WebViewJsInterface(private val context: Context) {
     fun eventExecute(params: String) {
         Toast.makeText(context, "event $params", Toast.LENGTH_LONG).show()
     }
+
 }
 
