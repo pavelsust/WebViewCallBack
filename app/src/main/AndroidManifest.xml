@@ -13,10 +13,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.WebViewCallBack"
         tools:targetApi="31">
+
+
         <activity
-            android:name=".web.WebActivity"
+            android:name=".web.TokenActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.WebViewCallBack">
@@ -25,6 +28,14 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".web.WebActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.WebViewCallBack">
         </activity>
     </application>
 

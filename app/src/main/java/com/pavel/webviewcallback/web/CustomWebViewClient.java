@@ -1,6 +1,7 @@
 package com.pavel.webviewcallback.web;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Build;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 /**
  * Created by anshul on 26/04/17.
@@ -18,10 +20,17 @@ public  class CustomWebViewClient extends WebViewClient {
 
   private String TAG = "CustomWebViewClient";
 
+  private Context context;
+
+  public CustomWebViewClient(Context context){
+    this.context = context;
+  }
+
   @Override
   public void onPageStarted(WebView view, String url, Bitmap favicon) {
     super.onPageStarted(view, url, favicon);
     Log.d(TAG, "The webView with the following url " + url + " has started loading");
+
   }
 
   @Override
@@ -38,6 +47,12 @@ public  class CustomWebViewClient extends WebViewClient {
     Log.d(TAG, "The webView with the following url " + failingUrl +
         " failed with the following errorCode " +
         "" + errorCode);
+
+    Toast.makeText(context, "The webView with the following url " + failingUrl +
+            " failed with the following errorCode " +
+            "" + errorCode, Toast.LENGTH_SHORT).show();
+
+
 
   }
 

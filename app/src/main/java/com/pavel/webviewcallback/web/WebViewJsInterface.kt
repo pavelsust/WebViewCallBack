@@ -7,13 +7,13 @@ import android.widget.Toast
 
 class WebViewJsInterface(private val context: Context) {
     @JavascriptInterface
-    fun tokenStatus(value: Boolean, message: String) {
+    fun tokenStatus(value: String, message: String) {
         Toast.makeText(context, "" + value, Toast.LENGTH_LONG).show()
         Toast.makeText(context, "" + message, Toast.LENGTH_LONG).show()
     }
 
     @JavascriptInterface
-    fun contentChange(path: String, isPremium: Boolean) {
+    fun contentChange(path: String, isPremium: String) {
         Toast.makeText(context, "" + isPremium, Toast.LENGTH_LONG).show()
         Toast.makeText(context, "" + path, Toast.LENGTH_LONG).show()
     }
